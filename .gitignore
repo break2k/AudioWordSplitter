@@ -1,0 +1,7 @@
+# Python
+.venv
+
+# App
+input/
+output/
+txt/

@@ -1,0 +1,4 @@
+openai-whisper
+pydub
+requests
+google-cloud-speech
