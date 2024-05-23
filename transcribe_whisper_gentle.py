@@ -23,8 +23,7 @@ def transcribe_audio_with_whisper(audio_file_path):
 # Align transcription using Gentle hosted locally in Docker
 def align_with_gentle_docker(audio_file_path, transcription):
     url = "http://localhost/transcriptions?async=false"
-    with open(audio_file_path, "rb") as file_handle:
-        files = {"audio": file_handle, "transcript": (None, transcription)}
+    files = {"audio": open(audio_file_path, "rb"), "transcript": (None, transcription)}
 
     response = requests.post(url, files=files, timeout=10)
     response.raise_for_status()  # Raise an error if the request failed
